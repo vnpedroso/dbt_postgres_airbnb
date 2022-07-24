@@ -16,5 +16,7 @@ A DBT project created on airbnb review and listings data from Berlin (obtainable
 
 1. Go to pgAdmin and create your "airbnb" database
 
-2. Add your credentials to the creating_raw_tables.py, run the script once! Afterwards your tables will have been created. Replace the necessary info in the script (username, password, file paht, etc.)
+2. Decompress RAW_TABLES.zip file
+
+3. Add your credentials to the creating_raw_tables.py, run the script once! Afterwards your tables will have been created. Replace the necessary info in the script (username, password, file path, etc.)
 

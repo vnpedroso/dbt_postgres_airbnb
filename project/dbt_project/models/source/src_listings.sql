@@ -1,7 +1,7 @@
 {{
 	config(
 		materialized="incremental" ,
-		alias="SRC_LISTINGS" ,
+		alias="src_listings" ,
 		schema="dev" ,
 		unique_key="LISTING_ID"
 	)

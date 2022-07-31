@@ -1,0 +1,25 @@
+
+
+============================== 2022-07-31 14:21:34.640823 | 40b6490f-2523-466f-b248-879456d94b51 ==============================
+14:21:34.640823 [info ] [MainThread]: Running with dbt=1.1.1
+14:21:34.641820 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\nppvi\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'project_name': 'dbt_project', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+14:21:34.641820 [debug] [MainThread]: Tracking: tracking
+14:21:34.672228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C214DF2B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C214DF1F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C214DF310>]}
+14:21:34.674251 [debug] [MainThread]: Starter project path: C:\Users\nppvi\anaconda3\envs\dbt_postgres\lib\site-packages\dbt\include\starter_project
+14:22:11.320574 [info ] [MainThread]: 
+Your new dbt project "dbt_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+14:22:11.320574 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C214DF310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C214DF1F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013C214DF220>]}

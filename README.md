@@ -1,7 +1,7 @@
 # dbt_postgres_airbnb
 A DBT project created on airbnb review and listings data from Berlin (obtainable at insideairbnb.com and on dbtlearn.com courses), also available in the source_data folder.
 
-# Python and DBT Environment Set Up
+# python environent set up and dbt installation
 
 1. Create an env using the 3.8.13 version of python. If you use anaconda, like me, run the following in your terminal:
 "conda create -n <environment_name> python==3.8.13"
@@ -12,7 +12,7 @@ A DBT project created on airbnb review and listings data from Berlin (obtainable
 3. Install the PYSCOPG2 library to create py scripts to connect to postgres. If you use anaconda, like me, run the following inside the environment:
 "conda install psycopg2"
 
-# Creating Database and Raw_Tables
+# creating database and raw tables
 
 1. Go to pgAdmin and create your "airbnb" database
 

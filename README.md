@@ -20,3 +20,8 @@ A DBT project created on airbnb review and listings data from Berlin (obtainable
 
 3. Add your credentials to the creating_raw_tables.py, run the script once! Afterwards your tables will have been created. Replace the necessary info in the script (username, password, file path, etc.)
 
+# start dbt project 
+
+1. In the correct python environment, run "dbt init <project_name>"" in the chosen folder for you project
+
+2. In "~/.dbt/" modify the "profile.yml" file to set the proper connections, database, accesses for dbt and postgres. Check https://docs.getdbt.com/reference/warehouse-profiles/postgres-profile for more information

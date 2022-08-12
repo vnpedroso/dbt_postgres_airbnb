@@ -3,6 +3,8 @@
 		materialized="incremental" ,
 		alias="dim_listings" ,
 		schema="dev" ,
+		on_schema_change = "sync_all_columns" ,
+		merge_update_columns = ['ROOM_TYPE'] ,
 		unique_key="LISTING_ID"
 	)
 }}
@@ -20,6 +22,7 @@ SELECT
 		ELSE MINIMUM_NIGHTS
 	END AS MINIMUM_NIGHTS ,
 	HOST_ID ,
+	ROOM_TYPE ,
 	REPLACE(PRICE_STR,'$','')::NUMERIC AS PRICE ,
 	CREATED_AT ,
 	UPDATED_AT 

@@ -7,28 +7,28 @@
 	)
 }}
 
-WITH listings AS (
+WITH listings_cte AS (
 	SELECT * 
 	FROM {{ref('dim_listings')}}
 ),
 
-hosts AS (
+hosts_cte AS (
 	SELECT *
 	FROM {{ref('dim_hosts')}}
 )
 
 SELECT
-	listings.CREATED_AT ,
-	GREATEST(listings.UPDATED_AT, hosts.UPDATED_AT) AS UPDATED_AT ,
-	listings.LISTING_ID ,
-	listings.LISTING_NAME ,
-	listings.ROOM_TYPE ,
-	listings.minimum_nights ,
-	listings.PRICE ,
-	listings.HOST_ID ,
-	hosts.HOST_NAME ,
-	hosts.IS_SUPERHOST ,
-	{{dbt_utils.surrogate_key(['LISTINGS.LISTING_ID','HOSTS.HOST_ID'])}} AS LISTING_HOST_ID
-FROM listings
-LEFT JOIN hosts
-	ON listings.HOST_ID = hosts.HOST_ID
+	listings_cte.CREATED_AT ,
+	GREATEST(listings_cte.UPDATED_AT, hosts_cte.UPDATED_AT) AS UPDATED_AT ,
+	listings_cte.LISTING_ID ,
+	listings_cte.LISTING_NAME ,
+	listings_cte.ROOM_TYPE ,
+	listings_cte.minimum_nights ,
+	listings_cte.PRICE ,
+	listings_cte.HOST_ID ,
+	hosts_cte.HOST_NAME ,
+	hosts_cte.IS_SUPERHOST ,
+	{{dbt_utils.surrogate_key(['listings_cte.LISTING_ID','hosts_cte.HOST_ID'])}} AS LISTING_HOST_ID
+FROM listings_cte
+LEFT JOIN hosts_cte
+	ON listings_cte.HOST_ID = hosts_cte.HOST_ID

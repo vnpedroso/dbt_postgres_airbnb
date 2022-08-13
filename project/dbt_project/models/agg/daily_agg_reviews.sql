@@ -1,7 +1,7 @@
 {{
 	config(
 		materialized="incremental" ,
-		alias="daily_aggregate_reviews" ,
+		alias="daily_agg_reviews" ,
 		schema="dev",
 		unique_key="DATE_SENTIMENT_ID"
 	)

@@ -26,4 +26,4 @@ A DBT project created on airbnb review and listings data from Berlin (inspired o
 
 1. In the correct python environment, run "dbt init <project_name>"" in the chosen folder for you project
 
-2. In "~/.dbt/" modify the "profile.yml" file to set the proper connections, database, accesses for dbt and postgres. Check https://docs.getdbt.com/reference/warehouse-profiles/postgres-profile for more information(
+2. In "~/.dbt/" modify the "profile.yml" file to set the proper connections, database, accesses for dbt and postgres. Check https://docs.getdbt.com/reference/warehouse-profiles/postgres-profile for more information

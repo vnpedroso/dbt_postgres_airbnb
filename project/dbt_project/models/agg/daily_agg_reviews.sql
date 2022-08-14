@@ -18,6 +18,13 @@ SELECT
 	REVIEW_DATE::DATE AS REVIEW_DATE ,
 	{{dbt_utils.surrogate_key(['REVIEW_SENTIMENT','REVIEW_DATE'])}} AS DATE_SENTIMENT_ID
 FROM review_cte
+
+{% if is_incremental() %}
+
+WHERE REVIEW_DATE = CURRENT_DATE
+
+{% endif %}
+
 GROUP BY
 	REVIEW_DATE,
 	REVIEW_SENTIMENT,

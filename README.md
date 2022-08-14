@@ -1,5 +1,7 @@
 # dbt_postgres_airbnb
-A DBT project created on airbnb review and listings data from Berlin (obtainable at insideairbnb.com and on dbtlearn.com courses), also available in the source_data folder.
+A DBT project created on airbnb review and listings data from Berlin (inspired on dbtlearn.com courses)
+
+(data obtainable at insideairbnb.com, dbtlearn.com or in raw_data folder)
 
 # python environent set up and dbt installation
 
@@ -24,4 +26,4 @@ A DBT project created on airbnb review and listings data from Berlin (obtainable
 
 1. In the correct python environment, run "dbt init <project_name>"" in the chosen folder for you project
 
-2. In "~/.dbt/" modify the "profile.yml" file to set the proper connections, database, accesses for dbt and postgres. Check https://docs.getdbt.com/reference/warehouse-profiles/postgres-profile for more information
+2. In "~/.dbt/" modify the "profile.yml" file to set the proper connections, database, accesses for dbt and postgres. Check https://docs.getdbt.com/reference/warehouse-profiles/postgres-profile for more information(

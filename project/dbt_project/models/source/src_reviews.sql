@@ -9,7 +9,7 @@
 
 WITH RAW_REVIEWS AS (
 	SELECT * 
-	FROM AIRBNB.PUBLIC.RAW_REVIEWS
+	FROM {{source('airbnb','reviews')}}
 )
 
 SELECT

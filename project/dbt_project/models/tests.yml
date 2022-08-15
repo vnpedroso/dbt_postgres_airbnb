@@ -25,6 +25,30 @@ models:
           - accepted_values:
               values: ['positive','negative','neutral']
               quote: true
+
+  - name: mom_agg_reviews
+    columns:
+      - name: DATE_SENTIMENT_ID
+        tests:
+          - unique
+          - not_null
+      - name: REVIEW_SENTIMENT
+        tests:
+          - accepted_values:
+              values: ['positive','negative','neutral']
+              quote: true
+
+  - name: wow_agg_reviews
+    columns:
+      - name: DATE_SENTIMENT_ID
+        tests:
+          - unique
+          - not_null
+      - name: REVIEW_SENTIMENT
+        tests:
+          - accepted_values:
+              values: ['positive','negative','neutral']
+              quote: true
           
 ### DIM ####
   - name: dim_hosts

@@ -3,6 +3,7 @@
 		materialized="table" ,
 		alias="dim_dates" ,
 		schema="dev" ,
+		enabled=false,
 		unique_key="DATE_ID"
 	)
 }}

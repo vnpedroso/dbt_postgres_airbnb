@@ -64,6 +64,9 @@ models:
         tests:
           - unique
           - not_null
+      - name: MINIMUM_NIGHTS
+        tests:
+          - test_positive_values
 
   - name: dim_listings_hosts
     columns:

@@ -12,7 +12,7 @@ A DBT project created on airbnb review and listings data from Berlin (inspired o
 "pip install dbt-postgres"
 
 3. Install the PYSCOPG2 library to create py scripts to connect to postgres. If you use anaconda, like me, run the following inside the environment:
-"conda install psycopg2"
+"conda install -c conda-forge psycopg2"
 
 # creating database and raw tables
 

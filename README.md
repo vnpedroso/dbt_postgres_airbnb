@@ -20,7 +20,7 @@ A DBT project created on airbnb review and listings data from Berlin (inspired o
 
 2. Decompress RAW_TABLES.zip file
 
-3. Add your credentials to the creating_raw_tables.py, run the script once! Afterwards your tables will have been created. Replace the necessary info in the script (username, password, file path, etc.)
+3. Run the script _creating_raw_tables.py_. Type your postgres username and password when required. Afterwards your tables will have been created. Replace the necessary info in the script (username, password, file path, etc.)
 
 # create your profiles.yml file
 

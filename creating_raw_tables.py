@@ -1,12 +1,53 @@
 #necessary imports
 import psycopg2
 import os
+import getpass
+from getpass import getpass
+
+#getting credentials (postgres username and password)
+
+class Credentials():
+
+	def __init__(self):
+		self.username = ''
+		self.password = ''
+
+	def obtain_username(self):
+		user_first = input('type here your postgres username: ') 
+		user_confirm = input('confirm your postgres username: ') 
+
+		while True:
+			if user_first != user_confirm:
+				user_first = input('type here your postgres username: ')
+				user_confirm = input('confirm your postgres username: ') 
+			else:
+				self.username = user_confirm
+				break
+
+	def obtain_password(self):			
+		pswd_first = getpass('type here your postgres password: ')
+		pswd_confirm = getpass('confirm postgres password: ')
+
+		while True:
+			if pswd_first != pswd_confirm:
+				pswd_first = input('confirm your postgres username: ')
+				pswd_confirm = input('confirm your postgres username: ') 
+			else:
+				self.password = pswd_confirm
+				break
+
+	def get_credentials(self):
+		self.obtain_username()
+		self.obtain_password()
+
+my_credentials = Credentials()
+my_credentials.get_credentials()
 
 
 #creating connection
 conn = psycopg2.connect(database="airbnb", 
-						user=#YOUR_USERNAME 
-						password=#YOUR_PASSWORD , 
+						user=my_credentials.username
+						password=my_credentials.password , 
 						host="localhost", 
 						port= "5432")
 						# obs: 5432 is the default port in postgres and 'postgres' the default user

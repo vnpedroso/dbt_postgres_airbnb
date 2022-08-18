@@ -22,6 +22,16 @@ A DBT project created on airbnb review and listings data from Berlin (inspired o
 
 3. Add your credentials to the creating_raw_tables.py, run the script once! Afterwards your tables will have been created. Replace the necessary info in the script (username, password, file path, etc.)
 
+# create your profiles.yml file
+
+1. create a dbt hidden directory inside your home folder
+
+2. create a profiles.yml file inside the dbt hidden directory
+
+3. add the content of the dbt_project_airbnb/creating_profile.txt inside ~/.dbt/profiles.yml
+
+4. Modify the profiles.yml file with your postgres credentials and save it
+
 # play around with your dbt project
 
 1. dbt --version -> checks the version of dbt

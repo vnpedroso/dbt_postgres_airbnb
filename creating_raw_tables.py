@@ -1,5 +1,6 @@
 #necessary imports
 import psycopg2
+import os
 
 
 #creating connection
@@ -24,6 +25,20 @@ cur.execute('SELECT VERSION()')
 
 conn_test = cur.fetchone()
 print(f'\n successfully connected to: {conn_test}')
+
+
+#creating path variables
+basepath = os.path.abspath('./raw_data').replace('\\','\\\\')
+
+raw_sources = {'raw_listings_path':f'{basepath}\\\\raw_listings.csv',
+			   'raw_hosts_path':f'{basepath}\\\\raw_listings.csv',
+			   'raw_reviews_path':f'{basepath}\\\\raw_listings.csv'
+			   }
+
+# the code below creates a path variable for each table according to the above dictionary keys
+for key,val in raw_sources.items():
+	exec(key + '=val')
+
 
 #creating tables queries
 create_raw_listings = '''
@@ -60,7 +75,7 @@ create_raw_hosts =  '''
 print('\n table creation queries successfully created')
 
 #copy into queries
-cpinto_raw_listings = '''
+cpinto_raw_listings = f'''
 						COPY RAW_LISTINGS 
 							(id,
 						    listing_url,
@@ -71,31 +86,31 @@ cpinto_raw_listings = '''
 						    price,
 						    created_at,
 						    updated_at)
-						FROM '<YOUR_FILE_PATH>\\RAW_LISTINGS.CSV' 
+						FROM {raw_listings_path}
 						DELIMITER ','
 						CSV HEADER
 					  '''
 
-cpinto_raw_reviews = '''
+cpinto_raw_reviews = f'''
 						COPY RAW_REVIEWS
 							(listing_id, 
 							date, 
 							reviewer_name, 
 							comments, 
 							sentiment)
-						FROM '<YOUR_FILE_PATH>\\RAW_REVIEWS.CSV'
+						FROM {raw_listings_reviews}
 						DELIMITER ','
 						CSV HEADER
 					  '''
 
-cpinto_raw_hosts = '''
+cpinto_raw_hosts = f'''
 						COPY RAW_HOSTS
 							(id, 
 							name, 
 							is_superhost, 
 							created_at, 
 							updated_at)
-						FROM '<YOUR_FILE_PATH>\\RAW_HOSTS.csv'
+						FROM {raw_listings_hosts}
 						DELIMITER ','
 						CSV HEADER
 					  '''

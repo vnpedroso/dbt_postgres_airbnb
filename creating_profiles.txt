@@ -1,0 +1,25 @@
+dbt_project:
+  outputs:
+
+    dev:
+      type: postgres
+      threads: 3 #set how many models can run in parallel
+      host: localhost
+      port: 5432
+      user: <YOUR_USERNAME>
+      pass: <YOUR_PASSWORD>
+      dbname: airbnb
+      schema: dev
+      connect_timeout: 10 #10 seconds as default value
+
+    prod:
+      type: postgres
+      threads: [1 or more]
+      host: [host]
+      port: [port]
+      user: [prod_username]
+      pass: [prod_password]
+      dbname: [dbname]
+      schema: [prod_schema]
+
+  target: dev

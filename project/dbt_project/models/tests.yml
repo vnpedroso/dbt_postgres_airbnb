@@ -88,7 +88,7 @@ models:
           - not_null
 
 ### FACT ###
-  - name: fct_reviws
+  - name: fct_reviews
     columns: 
       - name: REVIEW_SENTIMENT
         tests:
